@@ -3,7 +3,7 @@
 " Maintainer:	Michael Neumann <mneumann@fantasy-coders.de>
 " Last Change:	2002 Nov 29
 "
-" $Id: oz.vim,v 1.2 2002/11/29 13:43:02 mneumann Exp $
+" $Id: oz.vim,v 1.3 2002/11/29 13:54:20 mneumann Exp $
 
 if exists("b:current_syntax")
   finish
@@ -67,9 +67,6 @@ syn region ozString start=+L\='+ skip=+\\\\\|\\'+ end=+'+
 
 syn match ozNumber "[0-9][0-9]*\(\.[0-9][0-9]*\)\?"
 
-
-let oz_emacs_colors = "true"
-
 if exists("oz_emacs_colors")
   hi link ozKeyword Define
   hi link ozOperator Define
@@ -80,12 +77,12 @@ else
   hi link ozBoolean	Boolean
 
   hi link ozVariable 	Identifier
-  hi link ozComment    	Comment
   hi link ozAtom        Type
 endif
 
 hi link ozString	String
 hi link ozNumber	Number	 
 hi link ozTodo		Todo
+hi link ozComment    	Comment
 
 let b:current_syntax = "oz"
